@@ -1,0 +1,36 @@
+:root {
+  /* Colors */
+  /* Primary */
+  --Cyan: hsl(180, 66%, 49%);
+  --LightViolet: #F0F1F6;
+  --DarkViolet: hsl(257, 27%, 26%);
+
+  /* Secondary */
+  --Red: hsl(0, 87%, 67%);
+
+  /* Neutral */
+  --Gray: hsl(0, 0%, 75%);
+  --GrayViolet: hsl(257, 7%, 63%);
+  --DarkBlue: hsl(255, 11%, 22%);
+  --DarkerViolet: hsl(260, 8%, 14%);
+
+  /* Type */
+  --FontSize: 18px;
+  --Family: 'Poppins', sans-serif;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: var(--FontSize) var(--Family);
+}
+
+.App  {
+  margin: 0px; /* margin: 0 100px; */
+  padding-top: 40px;
+}
+
