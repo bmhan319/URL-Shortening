@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Header from './components/Header'
-import MobileMenu from './components/MobileMenu'
+import IntroSection from './components/IntroSection'
 import './css/header.css'
+import './css/intro-section.css'
 import './css/mobile-menu.css'
 
 
@@ -10,7 +11,7 @@ class App extends Component {
     menuOpen: false
   }
 
-  menu =() => {
+  menu = () => {
     document.getElementById("mobileMenu").style.display = (this.state.menuOpen === false) ? "block" : "none"
     if (this.state.menuOpen === false) {
       this.setState({menuOpen: true})
@@ -23,8 +24,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header menu={this.menu} />
-        <MobileMenu />
-        <div>{this.state.menuOpen}</div>
+        <IntroSection />
       </div>
     );
    }
