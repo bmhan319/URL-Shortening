@@ -1,9 +1,14 @@
 import React from 'react'
+import Form from './Form'
+import BitlyContainer from './BitlyContainer'
 
-export default function StatsSection() {
+export default function StatsSection(props) {
   return (
     <section className="sec2">
-      
+      <Form  submitLink={props.submitLink} />
+      <BitlyContainer />
+
+      <div className="bitlyContainer"></div>
 
       <div className="stats-text-container">
         <h2 className="stats-title">Advanced Statistics</h2>

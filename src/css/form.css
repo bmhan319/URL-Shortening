@@ -1,0 +1,35 @@
+.shorten-container {
+  width: 100%;
+  height: 124px;
+  background-color: var(--DarkViolet);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  position: relative;
+  top: -62px;
+  border-radius: 8px;
+}
+
+.input {
+  height: 40px;
+  width: 100%;
+  border: 0;
+  border-radius: 6px;
+}
+
+.input-text {
+  margin-bottom: 12px;
+  padding-left: 12px;
+}
+
+.input-text::placeholder {
+  color: var(--GrayViolet);
+}
+
+.input-submit {
+  background-color: var(--Cyan);
+  color: #fff;
+  letter-spacing: 1px;
+}

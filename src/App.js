@@ -8,6 +8,8 @@ import './css/header.css'
 import './css/intro-section.css'
 import './css/mobile-menu.css'
 import './css/stats-section.css'
+import './css/form.css'
+import './css/bitly.css'
 import './css/boost-section.css'
 import './css/footer.css'
 
@@ -27,12 +29,29 @@ class App extends Component {
     }
   }
 
+  submitLink = (e) => {
+    e.preventDefault()
+    const link = document.getElementById("inputText").value
+    const prefix = /http:\/\//gi
+    const prefixes = /https:\/\//gi
+    
+    console.log(link)
+    let result = link.match(prefix)
+    let results = link.match(prefixes)
+
+    if (result || results) {
+      console.log('true')
+    } else {
+      console.log('false')
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <Header menu={this.menu} />
         <IntroSection />
-        <StatsSection />
+        <StatsSection submitLink={this.submitLink}/>
         <BoostSection />
         <Footer />
       </div>
