@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
 import Header from './components/Header'
 import IntroSection from './components/IntroSection'
+import StatsSection from './components/StatsSection'
 import BoostSection from './components/BoostSection'
+import Footer from './components/Footer'
 import './css/header.css'
 import './css/intro-section.css'
 import './css/mobile-menu.css'
+import './css/stats-section.css'
 import './css/boost-section.css'
+import './css/footer.css'
 
 
 
@@ -28,7 +32,9 @@ class App extends Component {
       <div className="App">
         <Header menu={this.menu} />
         <IntroSection />
+        <StatsSection />
         <BoostSection />
+        <Footer />
       </div>
     );
    }
