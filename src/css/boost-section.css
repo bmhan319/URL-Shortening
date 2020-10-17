@@ -1,0 +1,32 @@
+.sec3 {
+  width: 100%;
+  background-image: url("../img/bg-boost-mobile.svg");
+  background-color: var(--DarkViolet);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid var(--DarkViolet);
+}
+
+.boost-text-container {
+  text-align: center;
+  margin: 25% 0;
+}
+
+.boost-title {
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.boost-start-button {
+  margin-top: 16px;
+  border-radius: 30px;
+  width: 200px;
+  height: 44px; 
+  background-color: var(--Cyan);
+  color: #fff;
+  border: 0;
+  font-size: .85em;
+  letter-spacing: 2px;
+  cursor: pointer;
+}

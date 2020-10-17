@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import Header from './components/Header'
 import IntroSection from './components/IntroSection'
+import BoostSection from './components/BoostSection'
 import './css/header.css'
 import './css/intro-section.css'
 import './css/mobile-menu.css'
+import './css/boost-section.css'
+
 
 
 class App extends Component {
@@ -25,6 +28,7 @@ class App extends Component {
       <div className="App">
         <Header menu={this.menu} />
         <IntroSection />
+        <BoostSection />
       </div>
     );
    }
