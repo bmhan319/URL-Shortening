@@ -17,7 +17,9 @@ const TOKEN = process.env.REACT_APP_BITLY_TOKEN
 
 class App extends Component {
   state = {
-    menuOpen: false
+    menuOpen: false,
+    longLink: "",
+    shortLink: ""
   }
 
   menu = () => {
@@ -29,25 +31,35 @@ class App extends Component {
     }
   }
 
-  submitLink = (e) => {
+  submitLink = async (e) => {
     e.preventDefault()
     const link = document.getElementById("inputText").value
+  
     const prefix = /http:\/\//gi
-    const prefixes = /https:\/\//gi
-    let answer = ( link.match(prefix) || link.match(prefixes) ) ? link : "https://" + link
-
-    fetch("https://api-ssl.bitly.com/v4/shorten", {
+    const prefixSecure = /https:\/\//gi
+    let formattedLink = ( link.match(prefix) || link.match(prefixSecure) ) ? link : "https://" + link
+    
+    const bitly = "https://api-ssl.bitly.com/v4/shorten"
+    const setting = {
       method: 'POST',
       headers: {
         'Authorization': 'Bearer ' + TOKEN,
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ "long_url": answer })
-    }).then(function (response) {
-      return response.text()
-    }).then(function (text) {
-      console.log(text)
-    })
+      body: JSON.stringify({ "long_url": formattedLink })
+    }
+
+    const call = await fetch(bitly, setting)
+
+    try {
+      const data = await call.json()
+      this.setState({
+        longLink: data.long_url,
+        shortLink: data.link
+      })
+    } catch(err) {
+      console.error(err)
+    }
   }
   
 
