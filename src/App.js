@@ -62,13 +62,22 @@ class App extends Component {
     }
   }
   
+  copy = () => {
+    let shortLink = document.getElementById('shortLink').innerHTML
+    let dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value = shortLink;
+    dummy.select();
+    document.execCommand("copy")
+    document.body.removeChild(dummy);
+  }
 
   render() {
     return (
       <div className="App">
         <Header menu={this.menu} />
         <IntroSection />
-        <StatsSection submitLink={this.submitLink}/>
+        <StatsSection copy={this.copy} state={this.state} submitLink={this.submitLink}/>
         <BoostSection />
         <Footer />
       </div>
@@ -77,5 +86,4 @@ class App extends Component {
 }
 
 export default App;
-
 

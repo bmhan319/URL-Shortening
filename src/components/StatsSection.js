@@ -6,7 +6,7 @@ export default function StatsSection(props) {
   return (
     <section className="sec2">
       <Form  submitLink={props.submitLink} />
-      <BitlyContainer />
+      <BitlyContainer copy={props.copy} state={props.state}/>
       
       <div className="stats-text-container">
         <h2 className="stats-title">Advanced Statistics</h2>
