@@ -13,7 +13,7 @@ import './css/bitly.css'
 import './css/boost-section.css'
 import './css/footer.css'
 
-
+const TOKEN = process.env.REACT_APP_BITLY_TOKEN
 
 class App extends Component {
   state = {
@@ -34,17 +34,22 @@ class App extends Component {
     const link = document.getElementById("inputText").value
     const prefix = /http:\/\//gi
     const prefixes = /https:\/\//gi
-    
-    console.log(link)
-    let result = link.match(prefix)
-    let results = link.match(prefixes)
+    let answer = ( link.match(prefix) || link.match(prefixes) ) ? link : "https://" + link
 
-    if (result || results) {
-      console.log('true')
-    } else {
-      console.log('false')
-    }
+    fetch("https://api-ssl.bitly.com/v4/shorten", {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + TOKEN,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ "long_url": answer })
+    }).then(function (response) {
+      return response.text()
+    }).then(function (text) {
+      console.log(text)
+    })
   }
+  
 
   render() {
     return (
@@ -60,3 +65,5 @@ class App extends Component {
 }
 
 export default App;
+
+
