@@ -22,6 +22,11 @@ class App extends Component {
     shortLink: ""
   }
 
+  componentDidMount() {
+    const copyButton = document.querySelector('.copyButton')
+    copyButton.addEventListener("click", this.copy);
+  }
+
   menu = () => {
     document.getElementById("mobileMenu").style.display = (this.state.menuOpen === false) ? "block" : "none"
     if (this.state.menuOpen === false) {
@@ -30,6 +35,7 @@ class App extends Component {
       this.setState({menuOpen: false})
     }
   }
+
 
   submitLink = async (e) => {
     e.preventDefault()
@@ -60,6 +66,39 @@ class App extends Component {
     } catch(err) {
       console.error(err)
     }
+
+    this.createElem()
+  }
+
+  createElem = () => {
+    const container = document.getElementById('bitlyContainer')
+    const div = document.createElement('div')
+    const para1 = document.createElement('p')
+    const para2 = document.createElement('p')
+    const hr = document.createElement('hr')
+    const button = document.createElement('button')
+
+    div.style.backgroundColor = "f4f4f4";
+    div.style.height = "100px";
+    div.style.width = "200px";
+
+    para1.setAttribute('id', "longLink")
+    para2.setAttribute('id', "shortLink")
+    
+    para1.classList.add("linkText")
+    para2.classList.add("linkText")
+    para1.innerHTML = this.state.longLink
+    para2.innerHTML = this.state.shortLink
+    button.classList.add("copyButton")
+    button.innerHTML = "Copy"
+    button.setAttribute('id', "copyButton")
+
+    container.appendChild(div)
+    container.classList.remove('copyButton')
+    div.appendChild(para1)
+    div.appendChild(hr)
+    div.appendChild(para2)
+    div.appendChild(button)
   }
   
   copy = () => {
