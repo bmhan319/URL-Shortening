@@ -7,7 +7,7 @@ export default function StatsSection(props) {
     <section className="sec2">
       <Form  submitLink={props.submitLink} />
       <BitlyContainer copy={props.copy} state={props.state}/>
-      
+
       <div className="stats-text-container">
         <h2 className="stats-title">Advanced Statistics</h2>
         <p className="stats-text">Track how your links are performing across the web with our advanced statistics dashboard.</p>

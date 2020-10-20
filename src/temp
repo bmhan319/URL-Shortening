@@ -1,13 +1,12 @@
-fetch("https://api-ssl.bitly.com/v4/shorten", {
-      method: 'POST',
-      headers: {
-        'Authorization': 'Bearer ' + TOKEN,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ "long_url": answer })
-    }).then(function (response) {
-      return response.text()
-    }).then(function (text) {
-      console.log(text)
-      
-    })
+
+
+ copy = (num) => {
+    let shortLink = document.querySelector('.linkShort').innerHTML
+    let dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value = shortLink;
+    dummy.select();
+    document.execCommand("copy")
+    document.body.removeChild(dummy);
+  }
+

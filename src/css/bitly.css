@@ -1,0 +1,40 @@
+.bitlyLinks {
+  margin-bottom: 16px;
+  list-style: none;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.linkText {
+  padding: 8px 12px;
+  font-size: .7em;
+}
+
+.linkLine {
+  border: 1px solid var(--LightViolet);
+}
+
+.linkShort {
+  color: var(--Cyan);
+}
+
+.linkButtonContainer {
+  padding: 0 12px 12px; 
+}
+
+.copyButton {
+  color: #fff;
+  border-radius: 4px;
+  border: 0px;
+  height: 32px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.colorDefault {
+  background-color: var(--Cyan);
+}
+
+.colorActive {
+  background-color: #000;
+}

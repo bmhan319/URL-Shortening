@@ -15,16 +15,14 @@ import './css/footer.css'
 
 const TOKEN = process.env.REACT_APP_BITLY_TOKEN
 
+
 class App extends Component {
   state = {
     menuOpen: false,
     longLink: "",
-    shortLink: ""
-  }
-
-  componentDidMount() {
-    const copyButton = document.querySelector('.copyButton')
-    copyButton.addEventListener("click", this.copy);
+    shortLink: "",
+    count: 1,
+    bitly: []
   }
 
   menu = () => {
@@ -54,7 +52,6 @@ class App extends Component {
       },
       body: JSON.stringify({ "long_url": formattedLink })
     }
-
     const call = await fetch(bitly, setting)
 
     try {
@@ -67,48 +64,32 @@ class App extends Component {
       console.error(err)
     }
 
-    this.createElem()
+    this.setState({
+      count: this.state.count + 1,
+      bitly: [ ...this.state.bitly, [this.state.count, this.state.longLink, this.state.shortLink] ]
+    })
   }
 
-  createElem = () => {
-    const container = document.getElementById('bitlyContainer')
-    const div = document.createElement('div')
-    const para1 = document.createElement('p')
-    const para2 = document.createElement('p')
-    const hr = document.createElement('hr')
-    const button = document.createElement('button')
-
-    div.style.backgroundColor = "f4f4f4";
-    div.style.height = "100px";
-    div.style.width = "200px";
-
-    para1.setAttribute('id', "longLink")
-    para2.setAttribute('id', "shortLink")
+  copy = (num, shortLink) => {
+    const button = document.getElementById(`copyButton${num}`)
+    const buttons = document.querySelectorAll('.copyButton')
+    const dummy = document.createElement("textarea");
     
-    para1.classList.add("linkText")
-    para2.classList.add("linkText")
-    para1.innerHTML = this.state.longLink
-    para2.innerHTML = this.state.shortLink
-    button.classList.add("copyButton")
-    button.innerHTML = "Copy"
-    button.setAttribute('id', "copyButton")
-
-    container.appendChild(div)
-    container.classList.remove('copyButton')
-    div.appendChild(para1)
-    div.appendChild(hr)
-    div.appendChild(para2)
-    div.appendChild(button)
-  }
-  
-  copy = () => {
-    let shortLink = document.getElementById('shortLink').innerHTML
-    let dummy = document.createElement("textarea");
     document.body.appendChild(dummy);
     dummy.value = shortLink;
     dummy.select();
     document.execCommand("copy")
     document.body.removeChild(dummy);
+    
+    buttons.forEach( item => {
+      item.innerHTML = "Copy"
+      item.classList.remove('colorActive')
+      item.classList.add('colorDefault')
+    })
+    
+    button.innerHTML = "Copied!"
+    button.classList.remove('colorDefault')
+    button.classList.add('colorActive')
   }
 
   render() {
@@ -116,12 +97,12 @@ class App extends Component {
       <div className="App">
         <Header menu={this.menu} />
         <IntroSection />
-        <StatsSection copy={this.copy} state={this.state} submitLink={this.submitLink}/>
+        <StatsSection  copy={this.copy} state={this.state} submitLink={this.submitLink}/>
         <BoostSection />
         <Footer />
       </div>
-    );
-   }
+    )
+  }
 }
 
 export default App;
