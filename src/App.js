@@ -25,6 +25,7 @@ class App extends Component {
     bitly: []
   }
 
+ 
   menu = () => {
     document.getElementById("mobileMenu").style.display = (this.state.menuOpen === false) ? "block" : "none"
     if (this.state.menuOpen === false) {
@@ -34,14 +35,21 @@ class App extends Component {
     }
   }
 
-
-  submitLink = async (e) => {
+  submitLink = (e) => {
     e.preventDefault()
     const link = document.getElementById("inputText").value
-  
+    if (link.length === 0) {
+      console.log('error')
+    } else {
+      this.callAPI(link)
+    }
+  }
+
+
+  callAPI = async (text) => {
     const prefix = /http:\/\//gi
     const prefixSecure = /https:\/\//gi
-    let formattedLink = ( link.match(prefix) || link.match(prefixSecure) ) ? link : "https://" + link
+    let formattedLink = ( text.match(prefix) || text.match(prefixSecure) ) ? text : "https://" + text
     
     const bitly = "https://api-ssl.bitly.com/v4/shorten"
     const setting = {
@@ -69,6 +77,7 @@ class App extends Component {
       bitly: [ ...this.state.bitly, [this.state.count, this.state.longLink, this.state.shortLink] ]
     })
   }
+
 
   copy = (num, shortLink) => {
     const button = document.getElementById(`copyButton${num}`)
