@@ -45,6 +45,9 @@ class App extends Component {
     if (link.length === 0) {
       console.log('error')
       //Need to write code to handle error input
+      //Change line 3 and 31 in form.css
+      let input = document.getElementById('inputText')
+      console.log(input)
     } else {
       this.callAPI(formattedLink)
     }
