@@ -1,4 +1,6 @@
 .bitlyLinks {
+  position: relative;
+  top: -46px;
   margin-bottom: 16px;
   list-style: none;
   background-color: #fff;

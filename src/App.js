@@ -43,12 +43,13 @@ class App extends Component {
     const formattedLink = ( link.match(prefix) || link.match(prefixSecure) ) ? link : "https://" + link
 
     if (link.length === 0) {
-      console.log('error')
-      //Need to write code to handle error input
-      //Change line 3 and 31 in form.css
-      let input = document.getElementById('inputText')
-      console.log(input)
+      document.getElementById('inputTextContainer').classList.add("error")
+      document.getElementById('inputText').style.border = "2px solid var(--Red)"
+      document.querySelector('.shorten-container').style.top = "-76px"
     } else {
+      document.getElementById('inputTextContainer').classList.remove("error")
+      document.getElementById('inputText').style.border = "0px"
+      document.querySelector('.shorten-container').style.top = "-62px"
       this.callAPI(formattedLink)
     }
   }
