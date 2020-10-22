@@ -17,7 +17,7 @@ export default function Header(props) {
           </ul>
           <ul className="right">
             <li>Login</li>
-            <li>Sign Up</li>
+            <li className="header-button">Sign Up</li>
           </ul>
        </div>
 
