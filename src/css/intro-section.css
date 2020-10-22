@@ -52,3 +52,44 @@
   outline: none;
   box-shadow: 0 0 0 1pt #000;
 }
+
+@media only screen and (min-width: 376px) {
+  .sec1 {
+    max-width: 1440px;
+    flex-direction: row;
+    padding: 20px 0 100px 170px;
+    text-align: left;
+    
+  }
+
+  .intro-text-container {
+    width: 50%;
+  }
+
+  .intro-image-container {
+    width: 50%;
+    height: auto;
+    background-position: 100px center;
+    background-size: contain;
+  }
+
+  .intro-title {
+    font-size: 5vw;
+    font-weight: 700;
+    line-height: 1.1em;
+    letter-spacing: 0px;
+  }
+
+  .intro-text {
+    padding: 0;
+    font-size: 1.6vw;
+    line-height: 3vw;
+    letter-spacing: 0px;
+  }
+
+  .intro-start-button {
+    width: 12vw;
+    height: 3vw; 
+    font-size: 1.1vw;
+  }
+}
