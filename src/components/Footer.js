@@ -49,6 +49,22 @@ export default function Footer() {
         </ul>
       </div>
 
+      {/* Matrix used to create filter to change hover color of social icons to Cyan */}
+      <svg className="svgFilter" xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="colorFilter">
+            <feColorMatrix
+                      color-interpolation-filters="sRGB"
+                      type="matrix"
+                      values="  0.16 0 0 0 0
+                                0 0.81 0 0 0
+                                0 0 0.81 0 0
+                                0 0 0 1 0 "/>
+          </filter>
+          ...
+        </defs>
+      </svg>
+
     </footer>
   )
 }

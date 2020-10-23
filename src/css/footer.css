@@ -1,5 +1,6 @@
 .footer {
   background-color: var(--DarkerViolet);
+  max-width: 1440px;
   width: 100%;
   padding: 40px 20px;
 }
@@ -58,4 +59,36 @@
 .social {
   width: 16px;
   height: 16px;
+}
+
+.social:hover {
+  filter: url(#colorFilter);
+}
+
+.svgFilter {
+  display: none;
+}
+
+@media only screen and (min-width: 376px) {
+  .footer {
+    display: flex;
+    padding: 40px 0px;
+    justify-content: space-between;
+  }
+
+  .footer-logo-container {
+    width: 25%;
+  }
+
+  .footer-link-container {
+    width: auto;
+    margin-top: 0px;
+    padding-left: 100px;
+    text-align: left;
+  }
+
+  .footer-social-container {
+    margin-top: 0px;
+    width: 25%;
+  }
 }
