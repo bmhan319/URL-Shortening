@@ -61,7 +61,7 @@
   background-color: var(--Cyan);
   position: absolute;
   bottom: -30px;
-  left: 50%;
+  right: 50%;
   transform: translateX(-50%);
 }
 
@@ -74,11 +74,57 @@
 @media only screen and (min-width: 376px) {
   .sec2 {
     max-width: 1440px;
-    padding: 0 170px;
+    padding: 0 170px 80px;
   }
 
   .stats-text-container {
     width: 470px;
     margin: 30px auto 70px;
+  }
+
+  .windows-container {
+    display: flex;
+  }
+
+  .window {
+    margin-bottom: 0;
+    text-align: center;
+    padding: 50px 20px 30px;
+    position: relative;
+  }
+
+  .window1,
+  .window2 {
+    margin-right: 20px;
+  }
+
+  .window1 {
+    margin-bottom: 60px;
+  }
+
+  .window2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .window3 {
+    margin-top: 60px;
+  }
+
+  .window-icon-container {
+    left: 7%;
+    transform: none;
+  }
+
+  .vertical-line {
+    width: 20px;
+    height: 4px;
+    bottom: 100px;
+    right: -20px;
+    transform: translate(0, 0%);
+  }
+
+  .vertical-line2 {
+    bottom: 130px;
   }
 }
