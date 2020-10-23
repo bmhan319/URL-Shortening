@@ -43,3 +43,24 @@
   color: #fff;
   letter-spacing: 1px;
 }
+
+@media only screen and (min-width: 376px) {
+  .shorten-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 32px;
+    top: -52px; /*change this for 'error' to -xxpx*/
+    border-radius: 6px;
+  }
+
+  .inputTextContainer {
+    width: 100%;
+    margin-right: 16px;
+  }
+
+  .input-submit {
+    width: 150px;
+    margin-top: 0;
+  }
+}

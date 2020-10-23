@@ -40,3 +40,26 @@
 .colorActive {
   background-color: #000;
 }
+
+@media only screen and (min-width: 376px) {
+  .bitlyLinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+  }
+
+  .linkLine {
+    display: none;
+  }
+
+  .desktopContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .linkButtonContainer {
+    padding: 0; 
+    width: 100px;
+  }
+}
