@@ -14,6 +14,9 @@
   --DarkBlue: hsl(255, 11%, 22%);
   --DarkerViolet: hsl(260, 8%, 14%);
 
+  /* Hover */
+  --BrightButton: brightness(115%);
+
   /* Type */
   --FontSize: 18px;
   --Family: 'Poppins', sans-serif;

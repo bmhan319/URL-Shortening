@@ -53,4 +53,8 @@
     height: 3vw; 
     font-size: 1vw;
   }
+
+  .boost-start-button:hover {
+    filter: var(--BrightButton);
+  }
 }

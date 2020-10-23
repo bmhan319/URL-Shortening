@@ -81,6 +81,11 @@
   .left li,
   .right li {
     padding-right: 24px;
+    cursor: pointer;
+  }
+
+  .left li:hover {
+    color: #000;
   }
 
   .left li:nth-child(1) {
@@ -100,5 +105,9 @@
     border-radius: 30px;
     padding: 6px 0;
     text-align: center;
+  }
+
+  .header-button:hover {
+    filter: var(--BrightButton);
   }
 }

@@ -93,4 +93,8 @@
     height: 3vw; 
     font-size: 1.1vw;
   }
+
+  .intro-start-button:hover {
+    filter: var(--BrightButton);
+  }
 }

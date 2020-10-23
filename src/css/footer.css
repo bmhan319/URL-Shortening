@@ -91,4 +91,8 @@
     margin-top: 0px;
     width: 25%;
   }
+
+  .footer-link a:hover {
+    color: var(--Cyan);
+  }
 }
