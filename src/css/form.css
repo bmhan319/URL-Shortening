@@ -51,7 +51,7 @@
   letter-spacing: 1px;
 }
 
-@media only screen and (min-width: 376px) {
+@media only screen and (min-width: 601px) {
   .shorten-container {
     flex-direction: row;
     align-items: center;
