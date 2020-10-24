@@ -29,7 +29,8 @@
 }
 
 body {
-  font: var(--FontSize) var(--Family);
+  font: var(--FontSize);
+  font-family: var(--Family);
 }
 
 .App  {
