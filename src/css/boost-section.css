@@ -58,3 +58,15 @@
     background-color: var(--BrightButton);
   }
 }
+
+@media only screen and (min-width: 1441px) {
+  .boost-title {
+    font-size: 2em;
+  }
+
+  .boost-start-button {
+    width: 11em;
+    height: 2.7em; 
+    font-size: .9em;
+  }
+}
