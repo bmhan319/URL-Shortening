@@ -69,6 +69,7 @@
     width: 50%;
     padding-top: 70px;
     padding-bottom: 100px;
+    padding-right: 8px;
   }
 
   .intro-image-container {
@@ -79,23 +80,19 @@
   }
 
   .intro-title {
-    font-size: 5vw;
+    font-size: 2em;
     font-weight: 700;
-    line-height: 1.1em;
-    letter-spacing: 0px;
+    letter-spacing: 0;
   }
 
   .intro-text {
     padding: 0;
-    font-size: 1.6vw;
-    line-height: 3vw;
-    letter-spacing: 0px;
+    font-size: .8em;
+    letter-spacing: 0;
   }
 
   .intro-start-button {
-    width: 12vw;
-    height: 3vw; 
-    font-size: 1.1vw;
+    width: 150px;
   }
 
   .intro-start-button:hover {
@@ -107,6 +104,14 @@
   .sec1 {
     max-width: 1440px;
     padding: 0 0 100px 170px;
+  }
+
+  .intro-title {
+    line-height: 1.1em;
+  }
+
+  .intro-text {
+    line-height: 3vw;
   }
 }
 
