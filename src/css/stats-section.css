@@ -119,34 +119,26 @@
   .vertical-line {
     width: 20px;
     height: 4px;
-    bottom: 50px;
+    bottom: 45%;
     right: -20px;
     transform: translate(0, 0%);
   }
 
   .vertical-line2 {
-    bottom: 80px;
+    bottom: calc(45% + 30px);
   }
 
   .window-title {
-    font-size: 1.15vw;
+    font-size: 1em;
   }
   .window-text {
-    font-size: 1.05vw;
+    font-size: .7em;
   }
 }
 
 @media only screen and (min-width: 901px) {
   .sec2 {
     padding: 0px 170px 80px;
-  }
-
-  .vertical-line {
-    bottom: 100px;
-  }
-
-  .vertical-line2 {
-    bottom: 130px;
   }
 }
 
