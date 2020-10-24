@@ -35,7 +35,7 @@
 @media only screen and (min-width: 376px) {
   .sec3 {
     background-image: url("../img/bg-boost-desktop.svg");
-    background-size: 105%;
+    background-size: cover;
     padding: 40px 0;
   }
 
@@ -44,14 +44,10 @@
     margin:  0;
   }
 
-  .boost-title {
-    font-size: 2.5vw;
-  }
-
   .boost-start-button {
-    width: 12vw;
-    height: 3vw; 
-    font-size: 1vw;
+    width: 200px;
+    height: 44px; 
+    font-size: .85em;
   }
 
   .boost-start-button:hover {
