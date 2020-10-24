@@ -22,6 +22,23 @@ class App extends Component {
     bitly: []
   }
 
+  //Closes Mobile menu if open when window is resized
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize)
+  }
+
+  handleResize = () => {
+    let width = window.innerWidth
+    if (width > 600) {
+      this.setState({menuOpen: false})
+      document.getElementById("mobileMenu").style.display = "none"
+    } 
+  }
+
   //Open and close hamburger menu within the mobile site
   menu = () => {
     document.getElementById("mobileMenu").style.display = (this.state.menuOpen === false) ? "block" : "none"

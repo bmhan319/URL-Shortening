@@ -54,7 +54,7 @@ export default function Footer() {
         <defs>
           <filter id="colorFilter">
             <feColorMatrix
-                      color-interpolation-filters="sRGB"
+                      colorInterpolationFilters="sRGB"
                       type="matrix"
                       values="  0.16 0 0 0 0
                                 0 0.81 0 0 0
