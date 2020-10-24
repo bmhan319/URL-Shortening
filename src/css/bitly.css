@@ -41,10 +41,6 @@
   background-color: #000;
 }
 
-.copyButton:hover {
-  filter: var(--BrightButton);
-}
-
 @media only screen and (min-width: 376px) {
   .bitlyLinks {
     display: flex;
@@ -65,5 +61,9 @@
   .linkButtonContainer {
     padding: 0; 
     width: 100px;
+  }
+
+  .copyButton:hover {
+    background-color: var(--BrightButton);
   }
 }

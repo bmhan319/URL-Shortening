@@ -7,8 +7,15 @@
   justify-content: center;
   padding: 16px;
   position: relative;
-  top: -62px; /*change this for 'error' to -76px*/
   border-radius: 8px;
+}
+
+.shorten-container-top {
+  top: -62px; /*change this for 'error' to -76px*/
+}
+
+.shorten-container-top-error {
+  top: -76px;
 }
 
 .inputTextContainer {
@@ -30,7 +37,7 @@
   color: var(--GrayViolet);
 }
 
-.error::after {/*change this for error*/
+.error::after {
   content: "Please add a link";
   color: var(--Red);
   font-size: .65em;
@@ -50,13 +57,24 @@
     align-items: center;
     justify-content: flex-start;
     padding: 32px;
-    top: -52px; /*change this for 'error' to -xxpx*/
+    top: -52px;
     border-radius: 6px;
+    margin-bottom: 12px;
+  }
+
+  .shorten-container-top-error {
+    top: -52px;
   }
 
   .inputTextContainer {
     width: 100%;
     margin-right: 16px;
+  }
+
+  .error::after {
+    position: absolute;
+    left: 32px;
+    bottom: 12px;
   }
 
   .input-submit {
@@ -65,6 +83,6 @@
   }
 
   .input-submit:hover {
-    filter: var(--BrightButton);
+    background-color: var(--BrightButton);
   }
 }

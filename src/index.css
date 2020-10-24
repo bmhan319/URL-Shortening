@@ -15,7 +15,7 @@
   --DarkerViolet: hsl(260, 8%, 14%);
 
   /* Hover */
-  --BrightButton: brightness(115%);
+  --BrightButton: rgb(155,226,226);
 
   /* Type */
   --FontSize: 18px;

@@ -55,6 +55,6 @@
   }
 
   .boost-start-button:hover {
-    filter: var(--BrightButton);
+    background-color: var(--BrightButton);
   }
 }

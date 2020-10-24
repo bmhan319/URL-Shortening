@@ -45,11 +45,13 @@ class App extends Component {
     if (link.length === 0) {
       document.getElementById('inputTextContainer').classList.add("error")
       document.getElementById('inputText').style.border = "2px solid var(--Red)"
-      document.querySelector('.shorten-container').style.top = "-76px"
+      document.querySelector('.shorten-container').classList.add("shorten-container-top-error")
+      document.querySelector('.shorten-container').classList.remove("shorten-container-top")
     } else {
       document.getElementById('inputTextContainer').classList.remove("error")
       document.getElementById('inputText').style.border = "0px"
-      document.querySelector('.shorten-container').style.top = "-62px"
+      document.querySelector('.shorten-container').classList.remove("shorten-container-top-error")
+      document.querySelector('.shorten-container').classList.add("shorten-container-top")
       this.callAPI(formattedLink)
     }
   }
