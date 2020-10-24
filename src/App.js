@@ -13,8 +13,6 @@ import './css/bitly.css'
 import './css/boost-section.css'
 import './css/footer.css'
 
-const TOKEN = process.env.REACT_APP_BITLY_TOKEN
-
 class App extends Component {
   state = {
     menuOpen: false,
@@ -58,6 +56,7 @@ class App extends Component {
 
   //Makes call to Bitly API
   callAPI = async (formattedLink) => {
+    const TOKEN = process.env.REACT_APP_BITLY_TOKEN
     const bitly = "https://api-ssl.bitly.com/v4/shorten"
     const setting = {
       method: 'POST',
