@@ -53,7 +53,7 @@
   box-shadow: 0 0 0 1pt #000;
 }
 
-@media only screen and (min-width: 376px) {
+@media only screen and (min-width: 601px) {
   .sec1 {
     max-width: 1440px;
     flex-direction: row;
